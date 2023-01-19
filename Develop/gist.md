@@ -1,10 +1,12 @@
-# Title (replace with your title)
+# Regex Code: Finding and Matching a URL
 
-Introductory paragraph (replace this with your text)
+Regex code is a way of finding like the find and replace button in most editing softwares. However, Regex is more complex and allows you to look for any criteria that the usual find and replace button would not do. I am going to go into detail of a few Regex components and how they can be useful.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+I will be covering the regex code for matching a URL. 
+Here is an example: 
+```/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/```
 
 ## Table of Contents
 
@@ -24,7 +26,22 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ### Anchors
 
+Anchors do not match just any character. They match a position before or after characters.
+```^``` matches the beginning of the text, while
+```$``` matches the end of the text.
+So if you type 
+```/^abc/```
+Any text that starts with the letter a, the letters ab, or the letters abc will return true. Whereas
+```/abc$/```
+Any text that ends with the letter c, the letters bc, or the letters abc will return true.
+
+Let's see what that looks like in the code we were given for finding a URL.
+```/^(https?:\/\/)/``` means the code should start with http, and
+```/*\/?$/``` means the code should end with any of these characters.
+
 ### Quantifiers
+
+
 
 ### OR Operator
 
