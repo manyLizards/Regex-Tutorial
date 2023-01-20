@@ -48,15 +48,6 @@ Let's see what that looks like in the code we were given for finding a URL.
 ```{n,}``` Where "n" is a positive integer, matches at least "n" occurences of the preceding item. For example, ```/a{2,}/``` doesn't match the "a" in "candy", but matches all of the "a"s in "caandy" and in "caaaaaandy".
 ```{n,m}``` Where "n" is 0 or a positive integer, "m" is a positive integer, and m > n, matches at least "n" and at the most "m" occurrences of the preceding item "x". For example, ```/a{1,3}/``` matches nothing in "cndy", the "a" in "candy" the two "a"s in "caandy" and the first three "a"s in "caaaaaaandy".
 
-By default, the quantifiers aboce are "greedy", meaning they try to match as much of the string as possible. However, when you add an ```?``` at the end, like so
-```*?```
-```+?```
-```??```
-```{n}?```
-```{n,}?```
-```{n,m}?```
-it makes the quantifier "non-greedy", meaning that it will stop as soon as it finds one match.
-
 ### OR Operator
 
 You can clarify that the string you're looking for contains one or the other of two characters with the OR operator. For example
@@ -81,9 +72,21 @@ Flags come at the end of regular expressions, like so:
 
 ### Grouping and Capturing
 
+Groups use the () symbols. They are useful for creating blocks of patterns, so you can apply repititions or other modifiers to them as a whole. In the pattern ```([a-x]{3}[0-9])+```, the ```+``` metacharacter is applied to the whole group. Also, another main use of groups is for processing parts of a match like extracting data or replacing it.
+With ```pattern1(pattern2)pattern3```, you'll capture the results of pattern2 for later use but not the parts matched by pattern1 or pattern3. This is useful when you want to extract only a portion of the search.
+
 ### Bracket Expressions
 
 ### Greedy and Lazy Match
+
+By default, the quantifiers above are "greedy", meaning they try to match as much of the string as possible. However, when you add an ```?``` at the end, like so
+```*?```
+```+?```
+```??```
+```{n}?```
+```{n,}?```
+```{n,m}?```
+it makes the quantifier "non-greedy", meaning that it will stop as soon as it finds one match.
 
 ### Boundaries
 
@@ -93,4 +96,4 @@ Flags come at the end of regular expressions, like so:
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+manyLizards, or Jordan Barringer, is a software engineer studying at the University of Texas' online boot camp.
