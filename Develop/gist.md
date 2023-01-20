@@ -41,7 +41,21 @@ Let's see what that looks like in the code we were given for finding a URL.
 
 ### Quantifiers
 
+```*``` Will match the preceding item 0 or more times.
+```+``` Matches the preceding item 1 or more times. Equivalent to ```{1,}```
+```?``` Matches the preceding item 0 or 1 time. For example, ```/e?le?/``` matches the "el" in "angel" and the "le" in angle.
+```{n}``` Where "n" is a positive integer, matches exactly "n" occurrences of the preceding item. For example, ```/a{2}/``` doesn't match the "a" in "candy", but it matches all of the "a"s in "caandy", and the first two "a"s in "caaaaandy".
+```{n,}``` Where "n" is a positive integer, matches at least "n" occurences of the preceding item. For example, ```/a{2,}/``` doesn't match the "a" in "candy", but matches all of the "a"s in "caandy" and in "caaaaaandy".
+```{n,m}``` Where "n" is 0 or a positive integer, "m" is a positive integer, and m > n, matches at least "n" and at the most "m" occurrences of the preceding item "x". For example, ```/a{1,3}/``` matches nothing in "cndy", the "a" in "candy" the two "a"s in "caandy" and the first three "a"s in "caaaaaaandy".
 
+By default, the quantifiers aboce are "greedy", meaning they try to match as much of the string as possible. However, when you add an ```?``` at the end, like so
+```*?```
+```+?```
+```??```
+```{n}?```
+```{n,}?```
+```{n,m}?```
+it makes the quantifier "non-greedy", meaning that it will stop as soon as it finds one match.
 
 ### OR Operator
 
