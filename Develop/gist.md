@@ -60,8 +60,8 @@ it makes the quantifier "non-greedy", meaning that it will stop as soon as it fi
 ### OR Operator
 
 You can clarify that the string you're looking for contains one or the other of two characters with the OR operator. For example
-I or J would look like ```(I|J)```
-0 or O would look like ```(0|O)```
+I or J would look like ```/(I|J)/```
+0 or O would look like ```/(0|O)/```
 and so on.
 
 ### Character Classes
@@ -69,6 +69,15 @@ and so on.
 Also called "character set", it allows you to tell the regex engine to match only one out of several characters. Simply place the characters you want to match between square brackets. If you want to match an a or an e, use ```[ae]```. You could use this in ```gr[ae]y``` to match either gray or grey. The order of the characters inside the brackets does not matter. You can also use a hyphen inside a character class to specify a range of characters. ```[0-9]``` matches any single digit between 0 and 9.
 
 ### Flags
+
+Flags come at the end of regular expressions, like so:
+```/pattern/gmi``` with the flags being g, m , and i.
+```i``` makes the search case-insensitive, with no difference between A and a
+```g``` looks for all matches. Without it, only the first match is returned.
+```m``` multiline code
+```s``` enables "dotall" mode, which allows a "." to match newline character.
+```u``` enables full unicode support. The flag enables correct processing of surrogate pairs.
+```y``` enables "sticky" mode: searching at the exact position in the text.
 
 ### Grouping and Capturing
 
