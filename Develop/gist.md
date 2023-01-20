@@ -66,6 +66,8 @@ and so on.
 
 ### Character Classes
 
+Also called "character set", it allows you to tell the regex engine to match only one out of several characters. Simply place the characters you want to match between square brackets. If you want to match an a or an e, use ```[ae]```. You could use this in ```gr[ae]y``` to match either gray or grey. The order of the characters inside the brackets does not matter. You can also use a hyphen inside a character class to specify a range of characters. ```[0-9]``` matches any single digit between 0 and 9.
+
 ### Flags
 
 ### Grouping and Capturing
