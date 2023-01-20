@@ -59,6 +59,11 @@ it makes the quantifier "non-greedy", meaning that it will stop as soon as it fi
 
 ### OR Operator
 
+You can clarify that the string you're looking for contains one or the other of two characters with the OR operator. For example
+I or J would look like ```(I|J)```
+0 or O would look like ```(0|O)```
+and so on.
+
 ### Character Classes
 
 ### Flags
