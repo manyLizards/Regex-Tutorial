@@ -95,8 +95,11 @@ And lastly, ```([\/\w \.-]*)*``` groups the path.
 ### Bracket Expressions
 
 Brackets indicate a set of characters to match. Any individual character between the brackets will match, and you can also use a hyphen to define a set.
+We can clearly see 3 times brackets are used in our regular expression. Firstly, ```[\da-z\.-]``` describes a digit, lowercase letters, a period, or a dash. Second, ```[a-z\.]``` groups together any lowercase letter or period. Third, ```[\/\w \.-]``` groups together forward slashes, word characters, spaces, periods, or dashes.
 Curly braces are used to specify an exact amount of things to match. They are used after an expression: ```\na{2}\``` will only match 'na' exactly twice.
-Parentheses represent remembered matches. Once a match is remembered, you can use ```$n``` to refer to it, starting with ```$1``` up to ```$9```, or with ```$&``` to refer to the entire match.
+As we mentioned previously, there is one time this regular expression uses curly brackets, ```{2,6}```. It indicates that the previous group can be matched 2-6 times.
+
+Parentheses represent remembered matches. Once a match is remembered, you can use ```$n``` to refer to it, starting with ```$1``` up to ```$9```, or with ```$&``` to refer to the entire match. To see how this particular regular expression uses parentheses, please refer to [Grouping and Capturing](#grouping-and-capturing).
 
 
 ### Greedy and Lazy Match
@@ -110,13 +113,16 @@ By default, the quantifiers above are "greedy", meaning they try to match as muc
 ```{n,m}?```
 it makes the quantifier "non-greedy", meaning that it will stop as soon as it finds one match.
 
+The regular expression for finding a URL is strictly greedy.
+
 ### Boundaries
 
 The metacharacter ```/b``` is an anchor like the caret and dollar sign. It matches at a position that is called a "word boundary". You can place it before the first character in the string, if the first character is a word character, after the last character in the string, if the last character is a word character, or between two characters in the string, where one is a word character and the other is not a word character. There are no boundary characters in the regular expression to find a URL.
 
 ### Back-references
 
-Shown as ```\1```, an example of a back-reference would be ```([a-c])x\1x\1``` which matches ```axaxa```, ```bxbxb```, and ```cxcxc```. There are no back-references in the regular expression to find a URL.
+Shown as ```\1```, an example of a back-reference would be ```([a-c])x\1x\1``` which matches ```axaxa```, ```bxbxb```, and ```cxcxc```. 
+There are no back-references in the regular expression to find a URL.
 
 ### Look-ahead and Look-behind
 
