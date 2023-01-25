@@ -138,4 +138,4 @@ The regex to find a URL does not utilize the lookahead or lookbehind methods.
 
 ## Author
 
-manyLizards, or Jordan Barringer, is a software engineer studying at the University of Texas' online boot camp.
+manyLizards, or Jordan Barringer, is a software engineer studying at the University of Texas' online boot camp. Check out her other work on her Github profile: [https://github.com/manyLizards]#@manyLizards
